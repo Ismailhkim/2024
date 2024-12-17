@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2024 Memories</title>
+    <title>2024</title>
     <style>
         /* Reset Dasar */
         * {
@@ -138,8 +138,8 @@
 
     <!-- Halaman Utama -->
     <div class="main-container" id="mainPage">
-        <h1>2024 Memories</h1>
-        <p>Kenangan sepanjang tahun 2024, dari momen tak terlupakan hingga perjalanan yang menakjubkan.</p>
+        <h1>2024</h1>
+        <p>BAZIA ERA</p>
 
         <!-- Container Foto -->
         <div class="photo-container">
