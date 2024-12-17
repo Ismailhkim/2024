@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Memories</title>
+    <style>
+        /* Reset Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Tema Holographic Gelap dengan Garis RGB */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #232526, #414345, #6a82fb, #3a6073);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        /* Efek Garis Lampu RGB */
+        @keyframes rgbAnimation {
+            0% { background: linear-gradient(45deg, rgba(255,0,0,0.7), rgba(0,255,0,0.7), rgba(0,0,255,0.7)); }
+            25% { background: linear-gradient(45deg, rgba(0,255,255,0.7), rgba(255,0,255,0.7), rgba(255,255,0,0.7)); }
+            50% { background: linear-gradient(45deg, rgba(255,0,255,0.7), rgba(255,255,0,0.7), rgba(0,255,255,0.7)); }
+            75% { background: linear-gradient(45deg, rgba(0,0,255,0.7), rgba(255,0,0,0.7), rgba(0,255,0,0.7)); }
+            100% { background: linear-gradient(45deg, rgba(255,255,0,0.7), rgba(0,0,255,0.7), rgba(255,0,255,0.7)); }
+        }
+
+        .login-container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            outline: none;
+            font-size: 1em;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #6a82fb;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #3a6073;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        /* Main Page */
+        .main-container {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .main-container img {
+            width: 75%;
+            aspect-ratio: 4 / 3;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .main-container .portrait-grid img {
+            width: 30%;
+            aspect-ratio: 9 / 16;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .main-container .portrait-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .main-container img {
+                width: 90%;
+            }
+            .main-container .portrait-grid img {
+                width: 28%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Halaman Login -->
+    <div class="login-container" id="loginPage">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div id="errorMessage" class="error"></div>
+    </div>
+
+    <!-- Halaman Utama -->
+    <div class="main-container" id="mainPage">
+        <h1>2024 Memories</h1>
+        <p>Kenangan sepanjang tahun 2024, dari momen tak terlupakan hingga perjalanan yang menakjubkan.</p>
+
+        <!-- Container Foto -->
+        <div class="photo-container">
+            <!-- Foto Utama -->
+            <img src="1.jpg" alt="Foto Utama" class="main-photo">
+
+            <!-- Grid Foto Portrait -->
+            <div class="portrait-grid">
+                <img src="2.jpg" alt="Foto 2">
+                <img src="3.jpg" alt="Foto 3">
+                <img src="4.jpg" alt="Foto 4">
+            </div>
+
+            <!-- Grid Foto Portrait Tambahan -->
+            <div class="portrait-grid">
+                <img src="5.jpg" alt="Foto 5">
+                <img src="6.jpg" alt="Foto 6">
+                <img src="7.jpg" alt="Foto 7">
+            </div>
+
+            <!-- Grid untuk 39 Foto Tambahan -->
+            <div class="portrait-grid">
+                <img src="8.jpg" alt="Foto 8">
+                <img src="9.jpg" alt="Foto 9">
+                <img src="10.jpg" alt="Foto 10">
+            </div>
+        </div>
+
+        <div class="footer" style="margin-top: 30px; color: rgba(255, 255, 255, 0.8); font-size: 0.9em;">
+            &copy; 2024. Semua Hak Dilindungi.
+        </div>
+    </div>
+
+    <script>
+        // Logic Login
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Mencegah reload halaman
+
+            // Ambil input username dan password
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Periksa username dan password
+            if (username === "angganaboys" && password === "baziaboy") {
+                // Sembunyikan halaman login dan tampilkan halaman utama
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('mainPage').style.display = 'block';
+            } else {
+                // Tampilkan pesan error
+                document.getElementById('errorMessage').textContent = "Username atau Password salah!";
+            }
+        });
+    </script>
+
+</body>
+</html>
